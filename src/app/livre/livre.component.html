@@ -1,0 +1,37 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ISBN</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Date de publication</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let livre of listeLivre">
+      <th scope="row">{{livre.isbnlivre}}</th>
+      <td>{{livre.titre}}</td>
+      <td>{{livre.auteur}}</td>
+      <td>{{livre.datePublication}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<form [formGroup]="livreForm">
+
+  <label for="titre">Titre</label>
+  <input type="text" formControlName="titre">
+  
+  <label for="auteur">Auteur</label>
+  <input type="text" formControlName="auteur">
+
+  <label for="datePublication">Date de publication</label>
+  <input type="date" formControlName="datePublication">
+  
+  <button type="submit" (click)="ajoutLivre()">Ajouter livre</button>
+  
+</form>
+
+
+
